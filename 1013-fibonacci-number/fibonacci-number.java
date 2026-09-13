@@ -1,23 +1,23 @@
 class Solution {
     public int fib(int n) {
 
+        int p = 0;
+        int i = 1;
+        int count = 2;
+
         if (n == 0) {
             return 0;
         }
 
-        if (n == 1) {
-            return 1;
+        while (count <= n) {
+
+            int temp = i;
+            i = p + i;
+            p = temp;
+
+            count++;
         }
 
-        int a = 0;
-        int b = 1;
-
-        for (int i = 2; i <= n; i++) {
-            int ans = a + b;
-            a = b;
-            b = ans;
-        }
-
-        return b;
+        return i;
     }
 }
